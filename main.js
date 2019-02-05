@@ -112,50 +112,50 @@ const businesses = [
 ];
 
 // for each exercise
-// let outputEl = document.querySelector("#bizList")
-// businesses.forEach(business => {
-//     outputEl.innerHTML += `
-//       <h2>${business.companyName}</h2>
-//       <section>
-//         ${business.addressFullStreet}
-//       </section>
-//       <section>
-//         ${business.purchasingAgent.nameFirst} ${business.purchasingAgent.nameLast}
-//       </section>
-//       <section>
-//         ${business.addressCity} ${business["addressStateCode"]} ${business["addressZipCode"]}
-//       </section>
-//     `
-//     outputEl.innerHTML += "<hr/>"
-//   });
+let outputEl = document.querySelector("#bizList")
+businesses.forEach(business => {
+    outputEl.innerHTML += `
+      <h2>${business.companyName}</h2>
+      <section>
+        ${business.addressFullStreet}
+      </section>
+      <section>
+        ${business.purchasingAgent.nameFirst} ${business.purchasingAgent.nameLast}
+      </section>
+      <section>
+        ${business.addressCity} ${business["addressStateCode"]} ${business["addressZipCode"]}
+      </section>
+    `
+    outputEl.innerHTML += "<hr/>"
+  });
 
-  // code to target element on page to output results
-// let outEl = document.querySelector("#manufacturingBusinesses")
-// outEl.innerHTML = "<h1>Manufacturing Businesses</h1>"
+//   code to target element on page to output results
+let outEl = document.querySelector("#manufacturingBusinesses")
+outEl.innerHTML = "<h1>Manufacturing Businesses</h1>"
 
-// // iterate through array and find business that's industry is manufacturing
-// const manufacturer = businesses.filter(business => {
-//   let isManufacturer = false
+// iterate through array and find business that's industry is manufacturing
+const manufacturer = businesses.filter(business => {
+  let isManufacturer = false
 
-//   if (business.companyIndustry === "Manufacturing") {
-//     isManufacturer = true
-//   }
-//   return isManufacturer
-// })
+  if (business.companyIndustry === "Manufacturing") {
+    isManufacturer = true
+  }
+  return isManufacturer
+})
 
-// // take results of above logic and print to DOM
-// manufacturer.forEach(business => {
-//   manufacturingBusinesses.innerHTML += `
-//   <h2>${business.companyName}</h2>
-//   <section>
-//   ${business.addressFullStreet}
-// </section>
-// <section>
-//   ${business.addressCity} ${business["addressStateCode"]} ${business["addressZipCode"]}
-// </section>
-// `
-// manufacturingBusinesses.innerHTML += "<hr/>"
-// })
+// take results of above logic and print to DOM
+manufacturer.forEach(business => {
+  manufacturingBusinesses.innerHTML += `
+  <h2>${business.companyName}</h2>
+  <section>
+  ${business.addressFullStreet}
+</section>
+<section>
+  ${business.addressCity} ${business["addressStateCode"]} ${business["addressZipCode"]}
+</section>
+`
+manufacturingBusinesses.innerHTML += "<hr/>"
+})
 
 // map
 const agents = businesses.map(business => {
